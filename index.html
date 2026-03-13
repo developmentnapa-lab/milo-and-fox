@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milo & Fox Salon — Luksuzni frizerski salon</title>
+<title>Milo & Fox Salon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -14,13 +14,9 @@ body{background:var(--k);color:var(--w);font-family:'Raleway',sans-serif;overflo
 @media(max-width:768px){body{cursor:auto}}
 img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:'Raleway',sans-serif}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--k)}::-webkit-scrollbar-thumb{background:var(--gd);border-radius:2px}
-
-/* CURSOR */
 #cur{position:fixed;width:10px;height:10px;background:var(--g);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .25s,height .25s;mix-blend-mode:difference}
 #cur-r{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:left .1s,top .1s,width .3s,height .3s;opacity:.5}
 @media(max-width:768px){#cur,#cur-r{display:none}}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:22px 64px;transition:padding .4s var(--ease),background .4s,border .4s}
 nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,168,76,.12)}
 .n-logo{display:flex;align-items:center;gap:13px;z-index:902}
@@ -51,40 +47,30 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .mob-soc a{width:40px;height:40px;border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;color:var(--g);transition:all .3s}
 .mob-soc a:hover{background:var(--g);color:var(--k)}
 .mob-soc svg{width:18px;height:18px;fill:currentColor}
-
-/* PAGE SYSTEM */
 .pg{display:none;min-height:100vh}
 .pg.on{display:block;animation:pgIn .5s var(--ease)}
 @keyframes pgIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
-/* HERO */
 .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .h-bg{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr 1fr;opacity:.17}
 .h-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.35) sepia(.25)}
 .h-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--k) 0%,transparent 28%,transparent 72%,var(--k) 100%),linear-gradient(to bottom,rgba(6,6,6,.5) 0%,transparent 22%,transparent 78%,var(--k) 100%)}
 .h-glow{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 55% 70% at 65% 55%,rgba(201,168,76,.07) 0%,transparent 70%)}
 .h-c{position:relative;z-index:2;text-align:center;padding:0 24px;max-width:860px}
-.h-sup{font-size:.6rem;letter-spacing:.55em;text-transform:uppercase;color:var(--g);font-weight:300;margin-bottom:22px;opacity:0;animation:up 1s .3s forwards}
 .h-h{font-family:'Playfair Display',serif;font-size:clamp(3.8rem,10vw,8.5rem);font-weight:400;line-height:.92;letter-spacing:-.02em;margin-bottom:14px;opacity:0;animation:up 1s .5s forwards}
 .h-h em{font-style:italic;color:var(--g);display:block}
 .h-sub{font-size:.6rem;letter-spacing:.55em;text-transform:uppercase;color:var(--w6);font-weight:300;margin-bottom:50px;opacity:0;animation:up 1s .7s forwards}
 .h-btns{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;opacity:0;animation:up 1s .9s forwards}
-/* FIXED: scroll indicator perfectly centered */
-.h-scroll{position:absolute;bottom:36px;left:0;right:0;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:7px;opacity:0;animation:up 1s 1.2s forwards;pointer-events:none;width:fit-content;transform:none;left:50%;transform:translateX(-50%)}
+.h-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;opacity:0;animation:up 1s 1.2s forwards;pointer-events:none}
 .h-scroll-lbl{font-size:.56rem;letter-spacing:.42em;text-transform:uppercase;color:var(--g);font-weight:300;white-space:nowrap}
 .h-scroll-l{width:1px;height:44px;background:linear-gradient(to bottom,var(--g),transparent);animation:pulse 2.2s infinite}
 @keyframes pulse{0%,100%{opacity:1;height:44px}50%{opacity:.2;height:24px}}
 @keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-
-/* BUTTONS */
 .btn-g{display:inline-block;background:var(--g);color:var(--k);padding:15px 40px;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;border:none;transition:all .35s;position:relative;overflow:hidden}
 .btn-g::before{content:'';position:absolute;inset:0;background:var(--gl);transform:translateX(-100%);transition:transform .4s var(--ease)}
 .btn-g:hover::before{transform:translateX(0)}
 .btn-g span{position:relative;z-index:1}
 .btn-o{display:inline-block;background:transparent;color:var(--w6);padding:15px 40px;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;border:1px solid rgba(255,255,255,.18);transition:all .35s}
 .btn-o:hover{border-color:var(--g);color:var(--g)}
-
-/* COMMON */
 .sup{font-size:.6rem;letter-spacing:.48em;text-transform:uppercase;color:var(--g);font-weight:400;display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .sup::before{content:'';flex:0 0 36px;height:1px;background:linear-gradient(to right,var(--g),transparent)}
 .sup-c{justify-content:center}
@@ -93,17 +79,6 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .h2 em{font-style:italic;color:var(--g)}
 .body-t{font-size:.88rem;line-height:1.95;color:var(--w6);font-weight:300;margin-bottom:30px}
 .ornament{text-align:center;padding:48px 0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:rgba(201,168,76,.2);letter-spacing:.5em}
-
-/* LOCATIONS */
-.loc-strip{display:flex;justify-content:center;align-items:stretch;border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);background:var(--k2);flex-wrap:wrap}
-.loc-item{display:flex;align-items:center;gap:16px;padding:32px 56px;flex:1;min-width:220px;justify-content:center;border-right:1px solid rgba(201,168,76,.1);transition:background .3s}
-.loc-item:last-of-type{border-right:none}
-.loc-item:hover{background:rgba(201,168,76,.03)}
-.loc-flag{font-size:1.8rem;line-height:1}
-.loc-t strong{display:block;font-size:.85rem;font-weight:500;margin-bottom:2px}
-.loc-t span{font-size:.7rem;color:var(--w6)}
-
-/* FEATURES */
 .feats{display:grid;grid-template-columns:repeat(3,1fr)}
 .feat{padding:60px 44px;border-right:1px solid rgba(201,168,76,.07);text-align:center;transition:background .4s}
 .feat:last-child{border-right:none}
@@ -111,16 +86,12 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .feat-ico{font-size:1.5rem;color:var(--g);margin-bottom:18px;display:block;letter-spacing:.25em}
 .feat-h{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;margin-bottom:10px}
 .feat-t{font-size:.77rem;line-height:1.85;color:var(--w6);font-weight:300}
-
-/* SPLIT */
 .split{display:grid;grid-template-columns:1fr 1fr;min-height:72vh}
 .split-img{position:relative;overflow:hidden;min-height:400px}
 .split-img img,.split-img video{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease);display:block}
 .split-img:hover img,.split-img:hover video{transform:scale(1.02)}
 .split-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 65%,var(--k))}
 .split-txt{display:flex;flex-direction:column;justify-content:center;padding:80px 80px 80px 60px;background:var(--k2)}
-
-/* APP BANNER */
 .app-banner{background:var(--k3);border:1px solid rgba(201,168,76,.14);margin:0 64px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;padding:52px 60px;position:relative;overflow:hidden}
 .app-banner::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(201,168,76,.09) 0%,transparent 70%);pointer-events:none}
 .app-banner-img{width:110px;flex-shrink:0}
@@ -130,8 +101,6 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .badge-gp svg{width:20px;height:20px;fill:var(--g);flex-shrink:0}
 .badge-gp-t small{display:block;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--w6);font-weight:300}
 .badge-gp-t strong{display:block;font-size:.8rem;font-weight:500}
-
-/* SERVICES PREVIEW */
 .svc-preview{padding:110px 64px;text-align:center}
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:60px}
 .svc-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer}
@@ -142,19 +111,7 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .svc-num{font-family:'Playfair Display',serif;font-size:2.6rem;color:rgba(201,168,76,.18);line-height:1;margin-bottom:4px}
 .svc-nm{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;margin-bottom:4px}
 .svc-sub{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g)}
-
-/* VIDEO */
-.vid-sec{padding:100px 0;background:var(--k2);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08);text-align:center}
-.vid-wrap{position:relative;max-width:860px;margin:52px auto 0;border:1px solid rgba(201,168,76,.2);overflow:hidden;box-shadow:0 0 70px rgba(0,0,0,.6)}
-.vid-wrap video{width:100%;display:block;background:var(--k)}
-.vid-wrap::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(6,6,6,.12) 0%,transparent 12%,transparent 88%,rgba(6,6,6,.12) 100%)}
-.vc{position:absolute;width:22px;height:22px;border-color:var(--g);border-style:solid;z-index:2}
-.vc.tl{top:-1px;left:-1px;border-width:2px 0 0 2px}
-.vc.tr{top:-1px;right:-1px;border-width:2px 2px 0 0}
-.vc.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
-.vc.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
-
-/* PAGE HERO */
+/* PAGE HERO — desktop */
 .pg-hero{height:50vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;min-height:300px}
 .pg-hero-bg{position:absolute;inset:0}
 .pg-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.3) saturate(.5)}
@@ -162,8 +119,6 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .pg-hero-c{position:relative;z-index:1;padding:52px 80px}
 .pg-hero-h{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:400;line-height:1}
 .pg-hero-h em{font-style:italic;color:var(--g)}
-
-/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;min-height:62vh}
 .about-txt{padding:88px 80px;display:flex;flex-direction:column;justify-content:center}
 .about-img{position:relative;overflow:hidden;min-height:380px}
@@ -182,8 +137,6 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .team-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 45%)}
 .team-nm{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:500;margin-bottom:5px}
 .team-role{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--g)}
-
-/* SERVICES PAGE */
 .svc-intro{padding:76px 80px 44px;text-align:center;max-width:660px;margin:0 auto}
 .svc-list{padding:0 80px 100px}
 .svc-cat{margin-bottom:68px}
@@ -199,8 +152,6 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .book-cta{margin:0 80px 80px;background:var(--k3);border:1px solid rgba(201,168,76,.14);padding:56px 60px;text-align:center;position:relative;overflow:hidden}
 .book-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:380px;height:380px;background:radial-gradient(circle,rgba(201,168,76,.05) 0%,transparent 70%);pointer-events:none}
 .book-cta p{max-width:480px;margin:0 auto 32px;font-size:.84rem;color:var(--w6);line-height:1.7;font-weight:300}
-
-/* GALLERY */
 .gal-intro{padding:68px 80px 44px;text-align:center}
 .gal-grid{columns:3;gap:5px;padding:0 5px 100px}
 .gal-item{break-inside:avoid;margin-bottom:5px;position:relative;overflow:hidden;cursor:pointer}
@@ -215,8 +166,6 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .lb img{max-width:86vw;max-height:88vh;object-fit:contain;border:1px solid rgba(201,168,76,.14);cursor:default}
 .lb-x{position:absolute;top:26px;right:34px;background:none;border:none;color:var(--g);font-size:1.7rem;line-height:1;cursor:pointer;transition:transform .2s}
 .lb-x:hover{transform:rotate(90deg)}
-
-/* CONTACT */
 .contact-lay{display:grid;grid-template-columns:1fr 1fr;min-height:72vh}
 .c-info{padding:88px 80px;background:var(--k2);display:flex;flex-direction:column;justify-content:center}
 .c-item{display:flex;gap:20px;align-items:flex-start;margin-bottom:38px}
@@ -228,8 +177,6 @@ nav.stuck{padding:13px 64px;background:rgba(6,6,6,.95);backdrop-filter:blur(24px
 .c-val a:hover{color:var(--g)}
 .c-map{min-height:500px}
 .c-map iframe{width:100%;height:100%;border:none;min-height:500px;display:block;filter:invert(92%) hue-rotate(180deg) saturate(.8) brightness(.85)}
-
-/* FOOTER */
 footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px 80px 36px}
 .f-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:56px;margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid rgba(201,168,76,.08)}
 .f-logo{display:flex;align-items:center;gap:11px;margin-bottom:16px}
@@ -253,13 +200,12 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
 .f-app-lnk svg{width:15px;height:15px;fill:currentColor}
 .f-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
 .f-copy{font-size:.66rem;color:var(--w3);font-weight:300;letter-spacing:.07em}
-
-/* HOURS GRID */
+.f-napa{font-size:.66rem;font-weight:300;color:var(--w3);letter-spacing:.05em}
+.f-napa a{color:#a855f7;transition:color .3s}
+.f-napa a:hover{color:#c084fc}
 .hours-grid{display:grid;grid-template-columns:auto 1fr;gap:5px 22px;align-items:center}
 .hours-time{color:var(--g);font-family:'Cormorant Garamond',serif;font-size:1.05rem}
 .hours-closed{color:rgba(244,239,230,.35);font-size:.78rem;letter-spacing:.06em;font-style:italic}
-
-/* REVIEWS */
 .rev-sec{padding:110px 80px;background:var(--k2);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px}
 .rev-card{background:var(--k3);border:1px solid rgba(201,168,76,.11);padding:38px 32px;position:relative;transition:border-color .35s,transform .4s var(--ease)}
@@ -272,15 +218,10 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
 .rev-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gd),var(--g));display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--k);flex-shrink:0;letter-spacing:.02em}
 .rev-nm{font-size:.76rem;font-weight:500;margin-bottom:1px}
 .rev-src{font-size:.6rem;color:var(--w3);letter-spacing:.1em;text-transform:uppercase}
-
-@media(max-width:1024px){.rev-grid{grid-template-columns:1fr 1fr}.rev-sec{padding:80px 40px}}
-@media(max-width:640px){.rev-grid{grid-template-columns:1fr}.rev-sec{padding:70px 20px}}
-
-/* REVEAL */
 .rv{opacity:0;transform:translateY(32px);transition:opacity .72s var(--ease),transform .72s var(--ease)}
 .rv.vi{opacity:1;transform:translateY(0)}
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media(max-width:1200px){
   nav,nav.stuck{padding-left:40px;padding-right:40px}
   .split-txt{padding:70px 52px 70px 46px}
@@ -290,9 +231,7 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
   .svc-preview{padding:100px 40px}
 }
 @media(max-width:1024px){
-  .n-mid{display:none}
-  .btn-lang{display:none}
-  .n-mob{display:flex}
+  .n-mid{display:none}.btn-lang{display:none}.n-mob{display:flex}
   .feats{grid-template-columns:1fr}
   .feat{border-right:none;border-bottom:1px solid rgba(201,168,76,.07)}
   .feat:last-child{border-bottom:none}
@@ -316,6 +255,8 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
   .f-top{grid-template-columns:1fr 1fr;gap:32px;margin-bottom:36px;padding-bottom:36px}
   .app-banner{margin:0 40px;grid-template-columns:1fr}
   .app-banner-img{display:none}
+  .rev-grid{grid-template-columns:1fr 1fr}
+  .rev-sec{padding:80px 40px}
 }
 @media(max-width:768px){
   nav{padding:15px 20px}
@@ -324,10 +265,18 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
   .n-logo-t{font-size:1rem}
   .h-h{font-size:clamp(3rem,14vw,4.5rem)}
   .btn-g,.btn-o{padding:13px 26px;font-size:.6rem}
+
+  /* Hero: show only center image on mobile */
+  .h-bg{grid-template-columns:1fr}
+  .h-bg img:first-child,.h-bg img:last-child{display:none}
+  .h-bg::after{background:linear-gradient(to bottom,rgba(6,6,6,.55) 0%,transparent 35%,transparent 65%,var(--k) 100%)}
+
+  /* Page hero: hug the nav on mobile */
+  .pg-hero{height:auto;min-height:0;align-items:flex-start;padding-top:76px;padding-bottom:0}
+  .pg-hero-c{padding:24px 20px 44px}
+  .pg-hero-h{font-size:clamp(2.2rem,10vw,3.5rem)}
+
   .svc-grid{grid-template-columns:1fr 1fr}
-  .loc-strip{flex-direction:column}
-  .loc-item{border-right:none;border-bottom:1px solid rgba(201,168,76,.1);width:100%;padding:22px 28px}
-  .loc-item:last-child{border-bottom:none}
   .team-grid{grid-template-columns:1fr 1fr;gap:20px}
   .team-sec{padding:64px 20px}
   .f-top{grid-template-columns:1fr}
@@ -340,13 +289,12 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
   .gal-grid{columns:1}
   .c-info{padding:56px 20px}
   .app-banner{margin:0 20px;padding:36px 24px}
-  .pg-hero-c{padding:32px 20px}
   .about-txt{padding:52px 20px}
   .about-quote{padding:52px 20px}
-  .vid-sec{padding:72px 0}
-  .vid-wrap{margin:40px 20px 0}
   .svc-preview{padding:80px 20px}
   .split-txt{padding:52px 20px}
+  .rev-grid{grid-template-columns:1fr}
+  .rev-sec{padding:70px 20px}
 }
 @media(max-width:480px){
   .h-h{font-size:clamp(2.6rem,16vw,3.8rem)}
@@ -397,7 +345,7 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
   </div>
 </div>
 
-<!-- ====== HOME ====== -->
+<!-- HOME -->
 <div id="pg-home" class="pg on">
   <section class="hero">
     <div class="h-bg">
@@ -405,7 +353,6 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
     </div>
     <div class="h-glow"></div>
     <div class="h-c">
-      <p class="h-sup" data-sr="Luksuzni frizerski salon · Beograd & Modriča" data-en="Luxury Hair Salon · Belgrade & Modriča">Luksuzni frizerski salon · Beograd & Modriča</p>
       <h1 class="h-h">Milo &amp;<br><em>Fox</em></h1>
       <p class="h-sub" data-sr="Salon" data-en="Salon">Salon</p>
       <div class="h-btns">
@@ -413,7 +360,6 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
         <a href="https://play.google.com/store/apps/details?id=com.cutlio.milo.and.fox.hair.studio" target="_blank" class="btn-o" data-sr="Zakaži termin" data-en="Book Appointment">Zakaži termin</a>
       </div>
     </div>
-
   </section>
 
   <div class="feats">
@@ -424,9 +370,7 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
 
   <section class="split">
     <div class="split-img">
-      <video autoplay muted loop playsinline>
-        <source src="mf_showcase.mp4" type="video/mp4">
-      </video>
+      <video autoplay muted loop playsinline><source src="mf_showcase.mp4" type="video/mp4"></video>
     </div>
     <div class="split-txt">
       <p class="sup" data-sr="Naša priča" data-en="Our Story">Naša priča</p>
@@ -447,7 +391,6 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
     </div>
   </section>
 
-  <!-- APP -->
   <div style="padding:72px 0">
     <div class="app-banner rv">
       <div>
@@ -462,44 +405,22 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
       <div class="app-banner-img"><img src="app logo.webp" alt="App"></div>
     </div>
   </div>
-  <!-- REVIEWS -->
+
   <section class="rev-sec">
     <div class="sup sup-c rv" data-sr="Recenzije" data-en="Reviews">Recenzije</div>
     <h2 class="h2 rv" style="text-align:center" data-sr="Drugi o <em>nama</em>" data-en="What others say <em>about us</em>">Drugi o <em>nama</em></h2>
     <div class="rev-grid">
-      <div class="rev-card rv">
-        <div class="rev-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="rev-text" data-sr="„Imala sam nevjerovatno iskustvo u Milo and Fox Hair Studio! Od trenutka kada sam ušla, osoblje me je natjeralo da se osjećam dobrodošlom i opuštenom. Moj stilist je bio nevjerovatno pažljiv i zaista uzeo vremena da razumije šta želim."" data-en="&ldquo;I had an amazing experience at Milo and Fox Hair Studio! From the moment I walked in, the staff made me feel so welcome and relaxed. My stylist was incredibly attentive, really taking the time to understand what I wanted and offering helpful suggestions.&rdquo;">„Imala sam nevjerovatno iskustvo u Milo and Fox Hair Studio! Od trenutka kada sam ušla, osoblje me je natjeralo da se osjećam dobrodošlom i opuštenom. Moj stilist je bio nevjerovatno pažljiv i zaista uzeo vremena da razumije šta želim."</p>
-        <div class="rev-foot">
-          <div class="rev-av">AK</div>
-          <div><div class="rev-nm">Ana K.</div><div class="rev-src">Google Review</div></div>
-        </div>
-      </div>
-      <div class="rev-card rv" style="transition-delay:.1s">
-        <div class="rev-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="rev-text" data-sr="„Šišanje i kolor koji sam dobila premašili su moja očekivanja! Kosa mi izgleda zdravije i življe nego ikad, a komplimenti ne prestaju. Takođe sam cijenila personalizovane savjete o održavanju novog izgleda kod kuće."" data-en="&ldquo;The haircut and color I received exceeded my expectations! My hair looks healthier and more vibrant than ever, and I've been getting compliments nonstop. I also really appreciated the personalized advice on how to maintain my new look at home.&rdquo;">„Šišanje i kolor koji sam dobila premašili su moja očekivanja! Kosa mi izgleda zdravije i življe nego ikad, a komplimenti ne prestaju. Takođe sam cijenila personalizovane savjete o održavanju novog izgleda kod kuće."</p>
-        <div class="rev-foot">
-          <div class="rev-av">MJ</div>
-          <div><div class="rev-nm">Maja J.</div><div class="rev-src">Google Review</div></div>
-        </div>
-      </div>
-      <div class="rev-card rv" style="transition-delay:.2s">
-        <div class="rev-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="rev-text" data-sr="„Salon ima tako šik i moderan ambijent, i možete vidjeti da su ponosni na čisto i profesionalno okruženje. Toplo preporučujem Milo and Fox svima koji traže vrhunsku uslugu u prijatnom i stilskom okruženju. Definitivno ću se vratiti!"" data-en="&ldquo;The salon has such a chic and modern vibe, and you can tell they take pride in maintaining a clean and professional environment. I highly recommend Milo and Fox to anyone looking for top-notch service in a friendly and stylish setting. I will definitely be back!&rdquo;">„Salon ima tako šik i moderan ambijent, i možete vidjeti da su ponosni na čisto i profesionalno okruženje. Toplo preporučujem Milo and Fox svima koji traže vrhunsku uslugu u prijatnom i stilskom okruženju. Definitivno ću se vratiti!"</p>
-        <div class="rev-foot">
-          <div class="rev-av">SN</div>
-          <div><div class="rev-nm">Sara N.</div><div class="rev-src">Google Review</div></div>
-        </div>
-      </div>
+      <div class="rev-card rv"><div class="rev-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="rev-text" data-sr="„Imala sam nevjerovatno iskustvo u Milo and Fox Hair Studio! Od trenutka kada sam ušla, osoblje me je natjeralo da se osjećam dobrodošlom i opuštenom. Moj stilist je bio nevjerovatno pažljiv i zaista uzeo vremena da razumije šta želim."" data-en="&ldquo;I had an amazing experience at Milo and Fox Hair Studio! From the moment I walked in, the staff made me feel so welcome and relaxed. My stylist was incredibly attentive, really taking the time to understand what I wanted and offering helpful suggestions.&rdquo;">„Imala sam nevjerovatno iskustvo u Milo and Fox Hair Studio! Od trenutka kada sam ušla, osoblje me je natjeralo da se osjećam dobrodošlom i opuštenom. Moj stilist je bio nevjerovatno pažljiv i zaista uzeo vremena da razumije šta želim."</p><div class="rev-foot"><div class="rev-av">AK</div><div><div class="rev-nm">Ana K.</div><div class="rev-src">Google Review</div></div></div></div>
+      <div class="rev-card rv" style="transition-delay:.1s"><div class="rev-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="rev-text" data-sr="„Šišanje i kolor koji sam dobila premašili su moja očekivanja! Kosa mi izgleda zdravije i življe nego ikad, a komplimenti ne prestaju. Takođe sam cijenila personalizovane savjete o održavanju novog izgleda kod kuće."" data-en="&ldquo;The haircut and color I received exceeded my expectations! My hair looks healthier and more vibrant than ever, and I've been getting compliments nonstop. I also really appreciated the personalized advice on how to maintain my new look at home.&rdquo;">„Šišanje i kolor koji sam dobila premašili su moja očekivanja! Kosa mi izgleda zdravije i življe nego ikad, a komplimenti ne prestaju. Takođe sam cijenila personalizovane savjete o održavanju novog izgleda kod kuće."</p><div class="rev-foot"><div class="rev-av">MJ</div><div><div class="rev-nm">Maja J.</div><div class="rev-src">Google Review</div></div></div></div>
+      <div class="rev-card rv" style="transition-delay:.2s"><div class="rev-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="rev-text" data-sr="„Salon ima tako šik i moderan ambijent, i možete vidjeti da su ponosni na čisto i profesionalno okruženje. Toplo preporučujem Milo and Fox svima koji traže vrhunsku uslugu u prijatnom i stilskom okruženju. Definitivno ću se vratiti!"" data-en="&ldquo;The salon has such a chic and modern vibe, and you can tell they take pride in maintaining a clean and professional environment. I highly recommend Milo and Fox to anyone looking for top-notch service in a friendly and stylish setting. I will definitely be back!&rdquo;">„Salon ima tako šik i moderan ambijent, i možete vidjeti da su ponosni na čisto i profesionalno okruženje. Toplo preporučujem Milo and Fox svima koji traže vrhunsku uslugu u prijatnom i stilskom okruženju. Definitivno ću se vratiti!"</p><div class="rev-foot"><div class="rev-av">SN</div><div><div class="rev-nm">Sara N.</div><div class="rev-src">Google Review</div></div></div></div>
     </div>
   </section>
-
   <div class="ornament">✦ ◈ ✦</div>
 </div>
 
-<!-- ====== ABOUT ====== -->
+<!-- ABOUT -->
 <div id="pg-about" class="pg">
-  <div class="pg-hero"><div class="pg-hero-bg"><img src="mf_blonde_waves.jpg" alt="About"></div><div class="pg-hero-c"><div class="sup" data-sr="Ko smo mi" data-en="Who We Are">Ko smo mi</div><h1 class="pg-hero-h">O <em>Nama</em></h1></div></div>
+  <div class="pg-hero"><div class="pg-hero-bg"><img src="mf_blonde_waves.jpg" alt="About"></div><div class="pg-hero-c"><h1 class="pg-hero-h" data-sr="O <em>Nama</em>" data-en="About <em>Us</em>">O <em>Nama</em></h1></div></div>
   <section class="about-grid">
     <div class="about-txt rv">
       <div class="sup" data-sr="Naša misija" data-en="Our Mission">Naša misija</div>
@@ -527,49 +448,15 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
   </section>
 </div>
 
-<!-- ====== SERVICES ====== -->
+<!-- SERVICES -->
 <div id="pg-services" class="pg">
-  <div class="pg-hero"><div class="pg-hero-bg"><img src="mf_honey_blonde.jpg" alt="Services"></div><div class="pg-hero-c"><div class="sup" data-sr="Šta nudimo" data-en="What We Offer">Šta nudimo</div><h1 class="pg-hero-h">Naše <em>Usluge</em></h1></div></div>
+  <div class="pg-hero"><div class="pg-hero-bg"><img src="mf_honey_blonde.jpg" alt="Services"></div><div class="pg-hero-c"><h1 class="pg-hero-h" data-sr="Naše <em>Usluge</em>" data-en="Our <em>Services</em>">Naše <em>Usluge</em></h1></div></div>
   <div class="svc-intro"><p class="body-t" style="text-align:center;margin:0" data-sr="Kompletan spektar frizerskih i kozmetičkih usluga, prilagođenih individualnim potrebama svake klijentice." data-en="A complete spectrum of hairdressing and beauty services, tailored to the individual needs of each client.">Kompletan spektar frizerskih i kozmetičkih usluga, prilagođenih individualnim potrebama svake klijentice.</p></div>
   <div class="svc-list">
-    <div class="svc-cat rv">
-      <div class="svc-cat-hdr"><div class="svc-cat-n">01</div><h2 class="svc-cat-title" data-sr="Farbanje & Koloristika" data-en="Coloring & Coloristics">Farbanje & Koloristika</h2></div>
-      <div class="svc-items">
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Punobojno farbanje" data-en="Full color">Punobojno farbanje</div><div class="svc-item-desc" data-sr="Potpuna promjena boje kose" data-en="Complete hair color change">Potpuna promjena boje kose</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm">Balayage</div><div class="svc-item-desc" data-sr="Ručno bojenje, prirodan prelaz" data-en="Hand-painted, natural transition">Ručno bojenje, prirodan prelaz</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm">Highlights / Folije</div><div class="svc-item-desc" data-sr="Klasično ili moderno pramenovanje" data-en="Classic or modern highlighting">Klasično ili moderno pramenovanje</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm">Ombre & Sombre</div><div class="svc-item-desc" data-sr="Gradient tehnika" data-en="Gradient technique">Gradient tehnika</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Korekcija boje" data-en="Color correction">Korekcija boje</div><div class="svc-item-desc" data-sr="Ispravka prethodnih tretmana" data-en="Correction of previous treatments">Ispravka prethodnih tretmana</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Bijeljenje kose" data-en="Hair bleaching">Bijeljenje kose</div><div class="svc-item-desc" data-sr="Profesionalno osvijetljavanje" data-en="Professional lightening">Profesionalno osvijetljavanje</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-      </div>
-    </div>
-    <div class="svc-cat rv">
-      <div class="svc-cat-hdr"><div class="svc-cat-n">02</div><h2 class="svc-cat-title" data-sr="Ekstenzije & Dužina" data-en="Extensions & Length">Ekstenzije & Dužina</h2></div>
-      <div class="svc-items">
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Tape-in ekstenzije" data-en="Tape-in extensions">Tape-in ekstenzije</div><div class="svc-item-desc" data-sr="Nevidljivo ugradivanje prirodne kose" data-en="Invisible installation">Nevidljivo ugradivanje prirodne kose</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Keratin ekstenzije" data-en="Keratin extensions">Keratin ekstenzije</div><div class="svc-item-desc" data-sr="Trajne i prirodne ekstenzije" data-en="Lasting natural extensions">Trajne i prirodne ekstenzije</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Clip-in ekstenzije" data-en="Clip-in extensions">Clip-in ekstenzije</div><div class="svc-item-desc" data-sr="Privremeno produžavanje" data-en="Temporary lengthening">Privremeno produžavanje</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Gusto ugušćivanje" data-en="Volume thickening">Gusto ugušćivanje</div><div class="svc-item-desc" data-sr="Dodavanje volumena" data-en="Adding volume">Dodavanje volumena</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-      </div>
-    </div>
-    <div class="svc-cat rv">
-      <div class="svc-cat-hdr"><div class="svc-cat-n">03</div><h2 class="svc-cat-title" data-sr="Tretmani & Njega" data-en="Treatments & Care">Tretmani & Njega</h2></div>
-      <div class="svc-items">
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Keratin tretman" data-en="Keratin treatment">Keratin tretman</div><div class="svc-item-desc" data-sr="Zaglađivanje i obnova" data-en="Smoothing and restoration">Zaglađivanje i obnova</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Botox za kosu" data-en="Hair botox">Botox za kosu</div><div class="svc-item-desc" data-sr="Dubinska regeneracija i sjaj" data-en="Deep regeneration and shine">Dubinska regeneracija i sjaj</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Olaplex tretman" data-en="Olaplex treatment">Olaplex tretman</div><div class="svc-item-desc" data-sr="Obnova strukture oštećene kose" data-en="Restoration of damaged hair">Obnova strukture oštećene kose</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Hidratacijska maska" data-en="Hydration mask">Hidratacijska maska</div><div class="svc-item-desc" data-sr="Intenzivna hidratacija" data-en="Intensive hydration">Intenzivna hidratacija</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-      </div>
-    </div>
-    <div class="svc-cat rv">
-      <div class="svc-cat-hdr"><div class="svc-cat-n">04</div><h2 class="svc-cat-title" data-sr="Frizure & Styling" data-en="Haircuts & Styling">Frizure & Styling</h2></div>
-      <div class="svc-items">
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Šišanje & Oblikovanje" data-en="Cut & Shape">Šišanje & Oblikovanje</div><div class="svc-item-desc" data-sr="Klasični i moderni rezovi" data-en="Classic and modern cuts">Klasični i moderni rezovi</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Svečana frizura" data-en="Formal updo">Svečana frizura</div><div class="svc-item-desc" data-sr="Vjenčanje, matura, priredba" data-en="Wedding, prom, events">Vjenčanje, matura, priredba</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Fen-sušenje & Ravnanje" data-en="Blow-dry & Straightening">Fen-sušenje & Ravnanje</div><div class="svc-item-desc" data-sr="Profesionalni alati" data-en="Professional tools">Profesionalni alati</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-        <div class="svc-item"><div><div class="svc-item-nm" data-sr="Šminkanje" data-en="Makeup">Šminkanje</div><div class="svc-item-desc" data-sr="Dnevno, večernje, svečano" data-en="Day, evening, formal">Dnevno, večernje, svečano</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div>
-      </div>
-    </div>
+    <div class="svc-cat rv"><div class="svc-cat-hdr"><div class="svc-cat-n">01</div><h2 class="svc-cat-title" data-sr="Farbanje & Koloristika" data-en="Coloring & Coloristics">Farbanje & Koloristika</h2></div><div class="svc-items"><div class="svc-item"><div><div class="svc-item-nm" data-sr="Punobojno farbanje" data-en="Full color">Punobojno farbanje</div><div class="svc-item-desc" data-sr="Potpuna promjena boje kose" data-en="Complete hair color change">Potpuna promjena boje kose</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm">Balayage</div><div class="svc-item-desc" data-sr="Ručno bojenje, prirodan prelaz" data-en="Hand-painted, natural transition">Ručno bojenje, prirodan prelaz</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm">Highlights / Folije</div><div class="svc-item-desc" data-sr="Klasično ili moderno pramenovanje" data-en="Classic or modern highlighting">Klasično ili moderno pramenovanje</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm">Ombre & Sombre</div><div class="svc-item-desc" data-sr="Gradient tehnika" data-en="Gradient technique">Gradient tehnika</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Korekcija boje" data-en="Color correction">Korekcija boje</div><div class="svc-item-desc" data-sr="Ispravka prethodnih tretmana" data-en="Correction of previous treatments">Ispravka prethodnih tretmana</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Bijeljenje kose" data-en="Hair bleaching">Bijeljenje kose</div><div class="svc-item-desc" data-sr="Profesionalno osvijetljavanje" data-en="Professional lightening">Profesionalno osvijetljavanje</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div></div></div>
+    <div class="svc-cat rv"><div class="svc-cat-hdr"><div class="svc-cat-n">02</div><h2 class="svc-cat-title" data-sr="Ekstenzije & Dužina" data-en="Extensions & Length">Ekstenzije & Dužina</h2></div><div class="svc-items"><div class="svc-item"><div><div class="svc-item-nm" data-sr="Tape-in ekstenzije" data-en="Tape-in extensions">Tape-in ekstenzije</div><div class="svc-item-desc" data-sr="Nevidljivo ugradivanje prirodne kose" data-en="Invisible installation">Nevidljivo ugradivanje prirodne kose</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Keratin ekstenzije" data-en="Keratin extensions">Keratin ekstenzije</div><div class="svc-item-desc" data-sr="Trajne i prirodne ekstenzije" data-en="Lasting natural extensions">Trajne i prirodne ekstenzije</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Clip-in ekstenzije" data-en="Clip-in extensions">Clip-in ekstenzije</div><div class="svc-item-desc" data-sr="Privremeno produžavanje" data-en="Temporary lengthening">Privremeno produžavanje</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Gusto ugušćivanje" data-en="Volume thickening">Gusto ugušćivanje</div><div class="svc-item-desc" data-sr="Dodavanje volumena" data-en="Adding volume">Dodavanje volumena</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div></div></div>
+    <div class="svc-cat rv"><div class="svc-cat-hdr"><div class="svc-cat-n">03</div><h2 class="svc-cat-title" data-sr="Tretmani & Njega" data-en="Treatments & Care">Tretmani & Njega</h2></div><div class="svc-items"><div class="svc-item"><div><div class="svc-item-nm" data-sr="Keratin tretman" data-en="Keratin treatment">Keratin tretman</div><div class="svc-item-desc" data-sr="Zaglađivanje i obnova" data-en="Smoothing and restoration">Zaglađivanje i obnova</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Botox za kosu" data-en="Hair botox">Botox za kosu</div><div class="svc-item-desc" data-sr="Dubinska regeneracija i sjaj" data-en="Deep regeneration and shine">Dubinska regeneracija i sjaj</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Olaplex tretman" data-en="Olaplex treatment">Olaplex tretman</div><div class="svc-item-desc" data-sr="Obnova strukture oštećene kose" data-en="Restoration of damaged hair">Obnova strukture oštećene kose</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Hidratacijska maska" data-en="Hydration mask">Hidratacijska maska</div><div class="svc-item-desc" data-sr="Intenzivna hidratacija" data-en="Intensive hydration">Intenzivna hidratacija</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div></div></div>
+    <div class="svc-cat rv"><div class="svc-cat-hdr"><div class="svc-cat-n">04</div><h2 class="svc-cat-title" data-sr="Frizure & Styling" data-en="Haircuts & Styling">Frizure & Styling</h2></div><div class="svc-items"><div class="svc-item"><div><div class="svc-item-nm" data-sr="Šišanje & Oblikovanje" data-en="Cut & Shape">Šišanje & Oblikovanje</div><div class="svc-item-desc" data-sr="Klasični i moderni rezovi" data-en="Classic and modern cuts">Klasični i moderni rezovi</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Svečana frizura" data-en="Formal updo">Svečana frizura</div><div class="svc-item-desc" data-sr="Vjenčanje, matura, priredba" data-en="Wedding, prom, events">Vjenčanje, matura, priredba</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Fen-sušenje & Ravnanje" data-en="Blow-dry & Straightening">Fen-sušenje & Ravnanje</div><div class="svc-item-desc" data-sr="Profesionalni alati" data-en="Professional tools">Profesionalni alati</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div><div class="svc-item"><div><div class="svc-item-nm" data-sr="Šminkanje" data-en="Makeup">Šminkanje</div><div class="svc-item-desc" data-sr="Dnevno, večernje, svečano" data-en="Day, evening, formal">Dnevno, večernje, svečano</div></div><div class="svc-price" data-sr="Po dogovoru" data-en="On request">Po dogovoru</div></div></div></div>
   </div>
   <div class="book-cta rv">
     <div class="sup sup-c" data-sr="Zakaži termin" data-en="Book Now">Zakaži termin</div>
@@ -579,9 +466,9 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
   </div>
 </div>
 
-<!-- ====== GALLERY ====== -->
+<!-- GALLERY -->
 <div id="pg-gallery" class="pg">
-  <div class="pg-hero"><div class="pg-hero-bg"><img src="mf_black_extensions.jpg" alt="Gallery"></div><div class="pg-hero-c"><div class="sup" data-sr="Naši radovi" data-en="Our Work">Naši radovi</div><h1 class="pg-hero-h"><em>Galerija</em></h1></div></div>
+  <div class="pg-hero"><div class="pg-hero-bg"><img src="mf_black_extensions.jpg" alt="Gallery"></div><div class="pg-hero-c"><h1 class="pg-hero-h" data-sr="<em>Galerija</em>" data-en="<em>Gallery</em>"><em>Galerija</em></h1></div></div>
   <div class="gal-intro"><div class="sup sup-c rv" data-sr="Svaka transformacija je naša priča" data-en="Every transformation is our story">Svaka transformacija je naša priča</div></div>
   <div class="gal-grid">
     <div class="gal-item rv" onclick="openLb('mf_red_bob.jpg')"><img src="mf_red_bob.jpg" alt="Red bob"><div class="gal-ov"><span class="gal-zoom">⊕</span></div></div>
@@ -597,37 +484,35 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
 </div>
 <div class="lb" id="lb" onclick="closeLb()"><button class="lb-x" onclick="closeLb()">✕</button><img id="lb-img" src="" alt="" onclick="event.stopPropagation()"></div>
 
-<!-- ====== CONTACT ====== -->
+<!-- CONTACT -->
 <div id="pg-contact" class="pg">
-  <div class="pg-hero"><div class="pg-hero-bg"><img src="mf_balayage_sitting.jpg" alt="Contact"></div><div class="pg-hero-c"><div class="sup" data-sr="Stupite u kontakt" data-en="Get In Touch">Stupite u kontakt</div><h1 class="pg-hero-h"><em>Kontakt</em></h1></div></div>
+  <div class="pg-hero"><div class="pg-hero-bg"><img src="mf_balayage_sitting.jpg" alt="Contact"></div><div class="pg-hero-c"><h1 class="pg-hero-h" data-sr="<em>Kontakt</em>" data-en="<em>Contact</em>"><em>Kontakt</em></h1></div></div>
   <div class="contact-lay">
     <div class="c-info">
       <div class="sup" data-sr="Informacije" data-en="Information">Informacije</div>
       <h2 class="h2" style="margin-bottom:46px" data-sr="Povežimo se" data-en="Let's Connect">Povežimo se</h2>
-      <div class="c-item rv"><div class="c-ico">📍</div><div><div class="c-lbl" data-sr="Modriča, BiH" data-en="Modriča, BiH">Modriča, BiH</div><div class="c-val">Vranjački Put br 12<br>Modriča 🇧🇦</div></div></div>
-      <div class="c-item rv"><div class="c-ico">📍</div><div><div class="c-lbl" data-sr="Beograd, Srbija" data-en="Belgrade, Serbia">Beograd, Srbija</div><div class="c-val">Belgrade Waterfront 🇷🇸</div></div></div>
+      <div class="c-item rv"><div class="c-ico">📍</div><div><div class="c-lbl" data-sr="Modriča, BiH" data-en="Modriča, BiH">Modriča, BiH</div><div class="c-val">Vranjački Put br 12<br>Modriča</div></div></div>
+      <div class="c-item rv"><div class="c-ico">📍</div><div><div class="c-lbl" data-sr="Beograd, Srbija" data-en="Belgrade, Serbia">Beograd, Srbija</div><div class="c-val">Belgrade Waterfront</div></div></div>
       <div class="c-item rv"><div class="c-ico">📱</div><div><div class="c-lbl">WhatsApp</div><div class="c-val"><a href="https://wa.me/38765231589">+387 65 231 589</a></div></div></div>
       <div class="c-item rv"><div class="c-ico">📸</div><div><div class="c-lbl">Instagram</div><div class="c-val"><a href="https://instagram.com/milo_and_fox_beauty" target="_blank">@milo_and_fox_beauty</a><br><a href="https://instagram.com/milo.joksimovic" target="_blank" style="font-size:.88rem">@milo.joksimovic</a><br><a href="https://instagram.com/fox_milijana" target="_blank" style="font-size:.88rem">@fox_milijana</a></div></div></div>
       <div class="c-item rv"><div class="c-ico">🕐</div><div>
         <div class="c-lbl" data-sr="Radno vrijeme" data-en="Working Hours">Radno vrijeme</div>
-        <div class="c-val">
-          <div class="hours-grid">
-            <span data-sr="Pon – Sub" data-en="Mon – Sat">Pon – Sub</span><span class="hours-time">08:00 – 16:00</span>
-            <span data-sr="Nedjelja" data-en="Sunday">Nedjelja</span><span class="hours-closed" data-sr="Zatvoreno" data-en="Closed">Zatvoreno</span>
-          </div>
-        </div>
+        <div class="c-val"><div class="hours-grid">
+          <span data-sr="Pon – Sub" data-en="Mon – Sat">Pon – Sub</span><span class="hours-time">08:00 – 16:00</span>
+          <span data-sr="Nedjelja" data-en="Sunday">Nedjelja</span><span class="hours-closed" data-sr="Zatvoreno" data-en="Closed">Zatvoreno</span>
+        </div></div>
       </div></div>
     </div>
     <div class="c-map"><iframe src="https://maps.google.com/maps?q=Vranjacki+Put+12,+Modrica&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
   </div>
 </div>
 
-<!-- ====== FOOTER ====== -->
+<!-- FOOTER -->
 <footer>
   <div class="f-top">
     <div>
       <div class="f-logo"><img src="applogo1.jpg" alt="Logo"><span class="f-logo-nm">Milo & Fox Salon</span></div>
-      <p class="f-brand-t" data-sr="Specijalizovani frizerski salon. Beograd Waterfront 🇷🇸 & Modriča, Vranjački Put 12 🇧🇦" data-en="Specialized hair salon. Belgrade Waterfront 🇷🇸 & Modriča, Vranjački Put 12 🇧🇦">Specijalizovani frizerski salon. Beograd Waterfront 🇷🇸 & Modriča, Vranjački Put 12 🇧🇦</p>
+      <p class="f-brand-t" data-sr="Specijalizovani frizerski salon. Beograd Waterfront & Modriča, Vranjački Put 12" data-en="Specialized hair salon. Belgrade Waterfront & Modriča, Vranjački Put 12">Specijalizovani frizerski salon. Beograd Waterfront & Modriča, Vranjački Put 12</p>
     </div>
     <div>
       <div class="f-h" data-sr="Navigacija" data-en="Navigation">Navigacija</div>
@@ -642,8 +527,8 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
     <div>
       <div class="f-h" data-sr="Kontakt" data-en="Contact">Kontakt</div>
       <div class="f-ct"><small>WhatsApp</small><a href="https://wa.me/38765231589">+387 65 231 589</a></div>
-      <div class="f-ct"><small data-sr="Modriča" data-en="Modriča">Modriča</small><span>Vranjački Put br 12 🇧🇦</span></div>
-      <div class="f-ct"><small data-sr="Beograd" data-en="Belgrade">Beograd</small><span>Belgrade Waterfront 🇷🇸</span></div>
+      <div class="f-ct"><small data-sr="Modriča" data-en="Modriča">Modriča</small><span>Vranjački Put br 12</span></div>
+      <div class="f-ct"><small data-sr="Beograd" data-en="Belgrade">Beograd</small><span>Belgrade Waterfront</span></div>
       <div class="f-ct"><small data-sr="Radno vrijeme" data-en="Hours">Radno vrijeme</small><span data-sr="Pon–Sub: 08:00–16:00" data-en="Mon–Sat: 08:00–16:00">Pon–Sub: 08:00–16:00</span><span data-sr="Nedjelja: Zatvoreno" data-en="Sunday: Closed" style="color:var(--w3);font-size:.7rem">Nedjelja: Zatvoreno</span></div>
     </div>
     <div>
@@ -660,23 +545,18 @@ footer{background:var(--k);border-top:1px solid rgba(201,168,76,.1);padding:68px
   <div class="f-bot">
     <span class="f-copy" data-sr="© 2025 Milo & Fox Salon. Sva prava zadržana." data-en="© 2025 Milo & Fox Salon. All rights reserved.">© 2025 Milo & Fox Salon. Sva prava zadržana.</span>
     <span class="f-copy" style="color:rgba(201,168,76,.3)">✦</span>
-    <span class="f-copy">Beograd 🇷🇸 & Modriča 🇧🇦</span>
+    <span class="f-napa">powered by <a href="https://instagram.com/napa.development" target="_blank">NAPA DEVELOPMENT</a></span>
   </div>
 </footer>
 
 <script>
-/* CURSOR */
 const cur=document.getElementById('cur'),curR=document.getElementById('cur-r');
 document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';setTimeout(()=>{curR.style.left=e.clientX+'px';curR.style.top=e.clientY+'px'},90)});
 document.querySelectorAll('a,button,.svc-card,.gal-item').forEach(el=>{
   el.addEventListener('mouseenter',()=>{cur.style.width='4px';cur.style.height='4px';curR.style.width='52px';curR.style.height='52px'});
   el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';curR.style.width='36px';curR.style.height='36px'});
 });
-
-/* NAV SCROLL */
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',window.scrollY>50),{passive:true});
-
-/* PAGE NAV */
 function goTo(p){
   document.querySelectorAll('.pg').forEach(x=>x.classList.remove('on'));
   document.getElementById('pg-'+p).classList.add('on');
@@ -684,8 +564,6 @@ function goTo(p){
   window.scrollTo({top:0,behavior:'smooth'});
   setTimeout(initReveal,100);
 }
-
-/* LANG */
 let lang='sr';
 function toggleLang(){
   lang=lang==='sr'?'en':'sr';
@@ -697,23 +575,16 @@ function toggleLang(){
     if(t)el.innerHTML=t;
   });
 }
-
-/* MOBILE */
 function toggleMob(){document.getElementById('mobMenu').classList.toggle('show');document.getElementById('burger').classList.toggle('x')}
 function closeMob(){document.getElementById('mobMenu').classList.remove('show');document.getElementById('burger').classList.remove('x')}
-
-/* LIGHTBOX */
 function openLb(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
 function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
-
-/* REVEAL */
 function initReveal(){
   const els=document.querySelectorAll('.pg.on .rv:not(.vi)');
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach((e,i)=>{
       if(e.isIntersecting){
-        const base=parseInt(e.target.style.transitionDelay)||0;
         if(!e.target.style.transitionDelay)e.target.style.transitionDelay=(i*70)+'ms';
         e.target.classList.add('vi');obs.unobserve(e.target);
       }
